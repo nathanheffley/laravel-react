@@ -41022,10 +41022,27 @@ var Counter = function (_Component) {
         _this.state = {
             count: 0
         };
+
+        _this.increment = _this.increment.bind(_this);
+        _this.decrement = _this.decrement.bind(_this);
         return _this;
     }
 
     _createClass(Counter, [{
+        key: 'increment',
+        value: function increment() {
+            var count = this.state.count;
+            count++;
+            this.setState({ count: count });
+        }
+    }, {
+        key: 'decrement',
+        value: function decrement() {
+            var count = this.state.count;
+            count--;
+            this.setState({ count: count });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -41035,6 +41052,16 @@ var Counter = function (_Component) {
                     'p',
                     null,
                     this.state.count
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { onClick: this.increment },
+                    '+'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'button',
+                    { onClick: this.decrement },
+                    '-'
                 )
             );
         }
