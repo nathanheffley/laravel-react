@@ -41017,7 +41017,12 @@ var Counter = function (_Component) {
     function Counter() {
         _classCallCheck(this, Counter);
 
-        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this));
+
+        _this.state = {
+            count: 0
+        };
+        return _this;
     }
 
     _createClass(Counter, [{
@@ -41029,7 +41034,7 @@ var Counter = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'p',
                     null,
-                    'Counter Component'
+                    this.state.count
                 )
             );
         }

@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Counter extends Component {
+    constructor() {
+        super();
+        this.state = {
+            count: 0
+        };
+    }
+
     render() {
         return (
             <div className="container">
-                <p>Counter Component</p>
+                <p>{ this.state.count }</p>
             </div>
         );
     }
